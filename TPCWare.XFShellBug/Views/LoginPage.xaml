@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Class="TPCWare.XFShellBug.Views.LoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TPCWare.XFShellBug.ViewModels"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             Title="{Binding PageTitle}"
+             Shell.FlyoutBehavior="Flyout">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center">
+
+        <Label Text="{Binding UserStatus}"
+                    HorizontalOptions="Center"
+                    Padding="20" />
+        <Button Text="{Binding ButtonText}" Margin="60, 10"
+                Command="{Binding ChangeAuthenticationStateCommand}" />
+
+    </StackLayout>
+    
+</ContentPage>
